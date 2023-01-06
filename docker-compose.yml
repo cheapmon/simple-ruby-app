@@ -1,0 +1,15 @@
+version: '3.5'
+volumes:
+  bundle:
+services:
+  app:
+    build: .
+    networks:
+      - 'default'
+    volumes:
+      - ".:/app"
+    environment: &env
+      APP_ENV: ${APP_ENV:-development}
+      TERM: xterm-256color
+    tty: true
+    stdin_open: true

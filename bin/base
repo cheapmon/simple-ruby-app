@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'rubygems'
+require 'bundler/setup'
+
+Bundler.require(:default)
+
+$loader ||= Zeitwerk::Loader.new.tap do |loader|
+  loader.push_dir('app')
+  loader.enable_reloading
+  loader.setup
+end
